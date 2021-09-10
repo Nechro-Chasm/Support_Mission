@@ -71,24 +71,27 @@ function draw() {
   rectMode(CENTER);
   background(0);
  
-  packageSprite.x= helicopterSprite.x 
-  packageSprite.y= helicopterSprite.y 
+  packageSprite.x= packageBody.position.x 
+  packageSprite.y= packageBody.position.y 
   
 
-  if (keyDown(RIGHT_ARROW)) {
-	 helicopterSprite.x +=2;
-	
-}
-if (keyDown(LEFT_ARROW)) {
-	helicopterSprite.x +=-2;
-}
-if (keyDown(DOWN_ARROW)) {
-	Matter.Body.setStatic(packageSprite, false);
-}
-
+  
   
   drawSprites();
   
   
 }
+function keyPressed(){
 
+	if (keyCode === RIGHT_ARROW) {
+		helicopterSprite.x +=2;
+	   
+   }
+   if (keyCode === LEFT_ARROW) {
+	   helicopterSprite.x +=-2;
+   }
+   if (keyCode === DOWN_ARROW) {
+	   Matter.Body.setStatic(packageBody, false);
+   }
+   
+}
